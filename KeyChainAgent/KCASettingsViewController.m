@@ -1,16 +1,16 @@
 //
-//  MPHSettingsViewController.m
-//  MacPassHTTP
+//  KCASettingsViewController.m
+//  KeyChainAgent
 //
 //  Created by Michael Starke on 11/11/15.
 //  Copyright © 2015 HicknHack Software GmbH. All rights reserved.
 //
 
-#import "MPHSettingsViewController.h"
-#import "MPHMacPassHTTP.h"
-#import "MPHServerDelegate.h"
+#import "KCASettingsViewController.h"
+#import "KCAKeyChainAgent.h"
+#import "KCAServerDelegate.h"
 
-@interface MPHSettingsViewController ()
+@interface KCASettingsViewController ()
 
 @property (weak) IBOutlet NSTextField *portTextField;
 @property (weak) IBOutlet NSButton *showMenuItemCheckButton;
@@ -22,7 +22,7 @@
 
 @end
 
-@implementation MPHSettingsViewController
+@implementation KCASettingsViewController
 
 - (void)dealloc {
   NSLog(@"%@ dealloc", [self class]);
@@ -35,7 +35,7 @@
 }
 
 - (NSString *)nibName {
-  return @"MacPassHTTPSettings";
+  return @"KeyChainAgentSettings";
 }
 
 - (void)awakeFromNib {
@@ -48,19 +48,19 @@
     self.portTextField.formatter = formatter;
     [self.portTextField bind:NSValueBinding
                     toObject:defaultsController
-                 withKeyPath:[NSString stringWithFormat:@"values.%@", kMPHSettingsKeyHttpPort]
+                 withKeyPath:[NSString stringWithFormat:@"values.%@", kKCASettingsKeyHttpPort]
                      options:nil];
     [self.showMenuItemCheckButton bind:NSValueBinding
                               toObject:defaultsController
-                           withKeyPath:[NSString stringWithFormat:@"values.%@", kMPHSettingsKeyShowMenuItem]
+                           withKeyPath:[NSString stringWithFormat:@"values.%@", kKCASettingsKeyShowMenuItem]
                                options:nil];
     [self.showNotificationsCheckButton bind:NSValueBinding
                                    toObject:defaultsController
-                                withKeyPath:[NSString stringWithFormat:@"values.%@", kMPHSettingsKeyShowNotifications]
+                                withKeyPath:[NSString stringWithFormat:@"values.%@", kKCASettingsKeyShowNotifications]
                                     options:nil];
     [self.allowRemoteConnectionCheckButton bind:NSValueBinding
                                    toObject:defaultsController
-                                withKeyPath:[NSString stringWithFormat:@"values.%@", kMPHSettingsKeyAllowRemoteConnections]
+                                withKeyPath:[NSString stringWithFormat:@"values.%@", kKCASettingsKeyAllowRemoteConnections]
                                     options:nil];
     didAwake = YES;
   }

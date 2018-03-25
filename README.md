@@ -1,6 +1,6 @@
-# MacPassHTTP
+# KeyChainAgent
 
-KeePassHTTP plugin for [MacPass](https://github.com/mstarke/MacPass)
+KeyChain Agent plugin for [MacPass](https://github.com/mstarke/MacPass)
 
 ## Dependencies
 
@@ -12,17 +12,17 @@ KeePassHTTP plugin for [MacPass](https://github.com/mstarke/MacPass)
 
 ### Using a precompiled version
 
-Download the latest release from the [Releases page](https://github.com/MacPass/MacPassHTTP/releases), extract, and copy the resulting file to the MacPass plugin folder at `~/Library/Application Support/MacPass/`. Restart MacPass if you're already running it.
+Download the latest release from the [Releases page](https://github.com/vhschlenker/KeyChainAgent/releases), extract, and copy the resulting file to the MacPass plugin folder at `~/Library/Application Support/MacPass/`. Restart MacPass if you're already running it.
 
 ### Building from source
 
 * Clone the repository
 ```bash
-git clone https://github.com/MacPass/MacPassHTTP
-cd MacPassHTTP
+git clone https://github.com/vhschlenker/KeyChainAgent
+cd KeyChainAgent
 ```
 * Install [Carthage](https://github.com/Carthage/Carthage#installing-carthage)
-* Fetch and build dependencies for MacPassHTTP
+* Fetch and build dependencies for KeyChainAgent
 ```bash
 carthage bootstrap --platform macOS
 ```
@@ -40,18 +40,18 @@ carthage bootstrap --platform macOS
 ````
 └─ Folder
    ├─ MacPass
-   └─ MacPassHTTP
+   └─ KeyChainAgent
 ````
 
-* Change back to the MacPassHTTP folder, compile and install
+* Change back to the KeyChainAgent folder, compile and install
 ```bash
 cd ..
-cd MacPassHTTP
+cd KeyChainAgent
 xcodebuild
 ```
 
 The Plugin is moved to the plugin folder of MacPass automacially.
-````~/Library/Application Support/MacPass/MacPassHTTP.mpplugin````
+````~/Library/Application Support/MacPass/KeyChainAgent.mpplugin````
 
 ## License
 

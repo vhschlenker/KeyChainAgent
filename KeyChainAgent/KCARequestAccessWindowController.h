@@ -1,6 +1,6 @@
 //
-//  MPHAssiciationRequestWindowController.h
-//  MacPassHTTP
+//  KCAAssiciationRequestWindowController.h
+//  KeyChainAgent
 //
 //  Created by Michael Starke on 27/11/15.
 //  Copyright © 2015 HicknHack Software GmbH. All rights reserved.
@@ -9,12 +9,12 @@
 #import <Cocoa/Cocoa.h>
 #import <HNHUi/HNHUi.h>
 
-typedef NS_ENUM(NSInteger, MPHRequestResponse) {
-  MPHRequestResponseAllow,
-  MPHRequestResponseDeny,
+typedef NS_ENUM(NSInteger, KCARequestResponse) {
+  KCARequestResponseAllow,
+  KCARequestResponseDeny,
 };
 
-@interface MPHRequestAccessWindowController : HNHUISheetWindowController
+@interface KCARequestAccessWindowController : HNHUISheetWindowController
 
 /**
  *  The identifier supplied by the user. Default is a UUID string.
@@ -28,6 +28,6 @@ typedef NS_ENUM(NSInteger, MPHRequestResponse) {
  *
  *  @return window controller instance
  */
-- (instancetype)initWithRequestKey:(NSString *)key completionHandler:(void(^)(MPHRequestResponse response, NSString *identifier))handler;
+- (instancetype)initWithRequestKey:(NSString *)key completionHandler:(void(^)(KCARequestResponse response, NSString *identifier))handler;
 
 @end

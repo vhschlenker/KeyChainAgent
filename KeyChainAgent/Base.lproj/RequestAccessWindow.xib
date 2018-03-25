@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="MPHRequestAccessWindowController">
+        <customObject id="-2" userLabel="File's Owner" customClass="KCARequestAccessWindowController">
             <connections>
                 <outlet property="allowButton" destination="MzR-3k-dKj" id="2bY-JN-1OI"/>
                 <outlet property="identifierTextField" destination="KOq-nn-JLf" id="SR0-C9-U6w"/>

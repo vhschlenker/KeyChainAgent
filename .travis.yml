@@ -1,6 +1,6 @@
 osx_image: xcode9
-xcode_project: MacPassHTTP.xcodeproj
-xcode_scheme: MacPassHTTP
+xcode_project: KeyChainAgent.xcodeproj
+xcode_scheme: KeyChainAgent
 language: objective-c
 
 before_install:
@@ -11,12 +11,12 @@ before_install:
   - carthage bootstrap --platform macOS
 
 after_success:
-  - cd $(readlink ./build/Build/Products/Release/MacPassHTTP.mpplugin)/..
-  - zip -9ry MacPassHTTP-continuous.zip MacPassHTTP.mpplugin
+  - cd $(readlink ./build/Build/Products/Release/KeyChainAgent.mpplugin)/..
+  - zip -9ry KeyChainAgent-continuous.zip KeyChainAgent.mpplugin
   - cd -
-  - mv $(readlink ./build/Build/Products/Release/MacPassHTTP.mpplugin)/../MacPassHTTP-continuous.zip .
+  - mv $(readlink ./build/Build/Products/Release/KeyChainAgent.mpplugin)/../KeyChainAgent-continuous.zip .
 
-script: xcodebuild clean && xcodebuild build -configuration release -project MacPassHTTP.xcodeproj -scheme MacPassHTTP CODE_SIGNING_REQUIRED=NO SKIP_INSTALL=YES -derivedDataPath ./build
+script: xcodebuild clean && xcodebuild build -configuration release -project KeyChainAgent.xcodeproj -scheme KeyChainAgent CODE_SIGNING_REQUIRED=NO SKIP_INSTALL=YES -derivedDataPath ./build
 
 branches:
   only:
@@ -27,9 +27,9 @@ deploy:
   provider: releases
   api_key:
     secure: R+lBThm58WA5/Dbh3ZLDi2FLnti/Q++Wfext+llekMk2AiL1/1+aKVpSnHuOqm51zVzhw9PW/HwHIx+HNom7F/CRHQqwFhOPPNkFcFadXxdu/y95jV1HpmEu1n30XO1p29nPfhB5sX9QWqJxcyBlZHrH6MIEMJCEU7mLnh440uBi4BVB7s1msxcNydpyRgNfcLrBFt1RW6IUfJZ8m7vE++kcIiFmNOq+bl9xgNX2EnA2sKL241V+EHSEyttLeLGnknWlSsDbca1dgnd7ix9ZkZgu4AbsxFE8r44I/6xUtjppCuLqubUYtTcnWqti/+FT29QP1pNMGXb76SdIQ2HEPfxChJndM9ppAb8vWcLxowaEkfCfzCG6vxGO373VZohSSIrXHvW8086lZUAvYplYmLiUkocj/+0z1j7e4Akb7wizieg4dTEx0QQcJsnm2viDIpyIHuMgRJZWJRn7hW4QnGVRclKIqSTKvOo586dzWcaB7QoKMikL7ohlD5Q7WW4cLmMPsl+OzkIJFmRRmo0dXR/ov9I5g259OAzZQ9OmRpX3gkGtEF2WgnhurC73s/YVa9xdodAfz4YsY0aloTxlIhDWt5DP5Sq9uz735A8znmY+zdjtZPcUf4eMVrPLRe5dn9TL+aMBjxw+RM3X44rnMm1n2NQA+Juqo087j+jPrAQ=
-  file: MacPassHTTP-continuous.zip
+  file: KeyChainAgent-continuous.zip
   overwrite: true
   on:
     tags: true
-    repo: MacPass/MacPassHTTP
+    repo: MacPass/KeyChainAgent
     branch: continuous

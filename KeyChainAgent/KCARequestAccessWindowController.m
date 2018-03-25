@@ -1,27 +1,27 @@
 //
-//  MPHAssiciationRequestWindowController.m
-//  MacPassHTTP
+//  KCAAssiciationRequestWindowController.m
+//  KeyChainAgent
 //
 //  Created by Michael Starke on 27/11/15.
 //  Copyright © 2015 HicknHack Software GmbH. All rights reserved.
 //
 
-#import "MPHRequestAccessWindowController.h"
+#import "KCARequestAccessWindowController.h"
 
-@interface MPHRequestAccessWindowController () <NSTextFieldDelegate>
+@interface KCARequestAccessWindowController () <NSTextFieldDelegate>
 @property (weak) IBOutlet NSTextField *messageTextField;
 @property (weak) IBOutlet NSTextField *identifierTextField;
 @property (weak) IBOutlet NSButton *allowButton;
 
 @property (copy) NSString *requestKey;
-@property (copy) void(^completionHandler)(MPHRequestResponse response, NSString *identifier);
+@property (copy) void(^completionHandler)(KCARequestResponse response, NSString *identifier);
 
 - (IBAction)allow:(id)sender;
 - (IBAction)deny:(id)sender;
 
 @end
 
-@implementation MPHRequestAccessWindowController
+@implementation KCARequestAccessWindowController
 
 - (NSString *)windowNibName {
   return @"RequestAccessWindow";
@@ -31,7 +31,7 @@
   return self.identifierTextField.stringValue;
 }
 
-- (instancetype)initWithRequestKey:(NSString *)key completionHandler:(void (^)(MPHRequestResponse, NSString *))handler {
+- (instancetype)initWithRequestKey:(NSString *)key completionHandler:(void (^)(KCARequestResponse, NSString *))handler {
   self = [super initWithWindow:nil];
   if(self) {
     self.completionHandler = handler;
@@ -60,15 +60,15 @@
 
 - (IBAction)allow:(id)sender {
   if(self.completionHandler) {
-    self.completionHandler(MPHRequestResponseAllow, self.identifierTextField.stringValue);
+    self.completionHandler(KCARequestResponseAllow, self.identifierTextField.stringValue);
   }
-  [self dismissSheet:MPHRequestResponseAllow];
+  [self dismissSheet:KCARequestResponseAllow];
 }
 
 - (IBAction)deny:(id)sender {
   if(self.completionHandler) {
-    self.completionHandler(MPHRequestResponseDeny, self.identifierTextField.stringValue);
+    self.completionHandler(KCARequestResponseDeny, self.identifierTextField.stringValue);
   }
-  [self dismissSheet:MPHRequestResponseDeny];
+  [self dismissSheet:KCARequestResponseDeny];
 }
 @end

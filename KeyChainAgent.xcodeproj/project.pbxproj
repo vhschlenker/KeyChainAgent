@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C10B73F1C08D2150077E477 /* MPHRequestAccessWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C10B73D1C08D2150077E477 /* MPHRequestAccessWindowController.m */; };
+		4C10B73F1C08D2150077E477 /* KCARequestAccessWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C10B73D1C08D2150077E477 /* KCARequestAccessWindowController.m */; };
 		4C3C897C200FADEF00D306BE /* Lock.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4C3C897B200FADEE00D306BE /* Lock.pdf */; };
 		4C3CAB051BFF339E009B4DF0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C3CAB071BFF339E009B4DF0 /* Localizable.strings */; };
-		4C487E781BF3A0A400E595DE /* MPHMacPassHTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C487E771BF3A0A400E595DE /* MPHMacPassHTTP.m */; };
-		4C487E7C1BF3A47700E595DE /* MPHSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C487E7A1BF3A47700E595DE /* MPHSettingsViewController.m */; };
+		4C487E781BF3A0A400E595DE /* KCAKeyChainAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C487E771BF3A0A400E595DE /* KCAKeyChainAgent.m */; };
+		4C487E7C1BF3A47700E595DE /* KCASettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C487E7A1BF3A47700E595DE /* KCASettingsViewController.m */; };
 		4C7B63811C0CC66400D7038C /* RequestAccessWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C7B63831C0CC66400D7038C /* RequestAccessWindow.xib */; };
 		4C8EDA791C062B1C00B9D147 /* KeePassHTTPKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C8EDA781C062B1C00B9D147 /* KeePassHTTPKit.framework */; };
 		4C8EDA7A1C062B2600B9D147 /* KeePassHTTPKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C8EDA781C062B1C00B9D147 /* KeePassHTTPKit.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		4C967E361BF63CA900B1838C /* MPHServerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C967E351BF63CA900B1838C /* MPHServerDelegate.m */; };
-		4CDE59481BFA051000C7AF5B /* MacPassHTTPSettings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CDE594A1BFA051000C7AF5B /* MacPassHTTPSettings.xib */; };
+		4C967E361BF63CA900B1838C /* KCAServerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C967E351BF63CA900B1838C /* KCAServerDelegate.m */; };
+		4CDE59481BFA051000C7AF5B /* KeyChainAgentSettings.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CDE594A1BFA051000C7AF5B /* KeyChainAgentSettings.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,27 +33,27 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4C10B73C1C08D2150077E477 /* MPHRequestAccessWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPHRequestAccessWindowController.h; sourceTree = "<group>"; };
-		4C10B73D1C08D2150077E477 /* MPHRequestAccessWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPHRequestAccessWindowController.m; sourceTree = "<group>"; };
+		4C10B73C1C08D2150077E477 /* KCARequestAccessWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCARequestAccessWindowController.h; sourceTree = "<group>"; };
+		4C10B73D1C08D2150077E477 /* KCARequestAccessWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCARequestAccessWindowController.m; sourceTree = "<group>"; };
 		4C3C897B200FADEE00D306BE /* Lock.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = Lock.pdf; path = Assets/Lock.pdf; sourceTree = SOURCE_ROOT; };
-		4C3CAB011BFF32AB009B4DF0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MacPassHTTPSettings.strings; sourceTree = "<group>"; };
+		4C3CAB011BFF32AB009B4DF0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/KeyChainAgentSettings.strings; sourceTree = "<group>"; };
 		4C3CAB061BFF339E009B4DF0 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4C3CAB081BFF33AA009B4DF0 /* Base */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		4C487E6D1BF39FC500E595DE /* MacPassHTTP.mpplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacPassHTTP.mpplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C487E6D1BF39FC500E595DE /* KeyChainAgent.mpplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeyChainAgent.mpplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C487E701BF39FC500E595DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4C487E761BF3A0A400E595DE /* MPHMacPassHTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPHMacPassHTTP.h; sourceTree = "<group>"; };
-		4C487E771BF3A0A400E595DE /* MPHMacPassHTTP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPHMacPassHTTP.m; sourceTree = "<group>"; };
-		4C487E791BF3A47700E595DE /* MPHSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPHSettingsViewController.h; sourceTree = "<group>"; };
-		4C487E7A1BF3A47700E595DE /* MPHSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPHSettingsViewController.m; sourceTree = "<group>"; };
-		4C5B48D61BFF3AED0036906C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/MacPassHTTPSettings.strings; sourceTree = "<group>"; };
+		4C487E761BF3A0A400E595DE /* KCAKeyChainAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCAKeyChainAgent.h; sourceTree = "<group>"; };
+		4C487E771BF3A0A400E595DE /* KCAKeyChainAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCAKeyChainAgent.m; sourceTree = "<group>"; };
+		4C487E791BF3A47700E595DE /* KCASettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCASettingsViewController.h; sourceTree = "<group>"; };
+		4C487E7A1BF3A47700E595DE /* KCASettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCASettingsViewController.m; sourceTree = "<group>"; };
+		4C5B48D61BFF3AED0036906C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/KeyChainAgentSettings.strings; sourceTree = "<group>"; };
 		4C5B48D71BFF3AED0036906C /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4C7B63821C0CC66400D7038C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RequestAccessWindow.xib; sourceTree = "<group>"; };
 		4C7B63851C0CC66700D7038C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/RequestAccessWindow.strings; sourceTree = "<group>"; };
 		4C7B63871C0CC66800D7038C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/RequestAccessWindow.strings; sourceTree = "<group>"; };
-		4C7E784D1BFF328600DFB924 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MacPassHTTPSettings.xib; sourceTree = "<group>"; };
+		4C7E784D1BFF328600DFB924 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/KeyChainAgentSettings.xib; sourceTree = "<group>"; };
 		4C8EDA781C062B1C00B9D147 /* KeePassHTTPKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeePassHTTPKit.framework; path = Carthage/Build/Mac/KeePassHTTPKit.framework; sourceTree = "<group>"; };
-		4C967E341BF63CA900B1838C /* MPHServerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPHServerDelegate.h; sourceTree = "<group>"; };
-		4C967E351BF63CA900B1838C /* MPHServerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPHServerDelegate.m; sourceTree = "<group>"; };
+		4C967E341BF63CA900B1838C /* KCAServerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCAServerDelegate.h; sourceTree = "<group>"; };
+		4C967E351BF63CA900B1838C /* KCAServerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCAServerDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,11 +71,11 @@
 		4C10B7411C08D2AE0077E477 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				4C487E791BF3A47700E595DE /* MPHSettingsViewController.h */,
-				4C487E7A1BF3A47700E595DE /* MPHSettingsViewController.m */,
-				4CDE594A1BFA051000C7AF5B /* MacPassHTTPSettings.xib */,
-				4C10B73C1C08D2150077E477 /* MPHRequestAccessWindowController.h */,
-				4C10B73D1C08D2150077E477 /* MPHRequestAccessWindowController.m */,
+				4C487E791BF3A47700E595DE /* KCASettingsViewController.h */,
+				4C487E7A1BF3A47700E595DE /* KCASettingsViewController.m */,
+				4CDE594A1BFA051000C7AF5B /* KeyChainAgentSettings.xib */,
+				4C10B73C1C08D2150077E477 /* KCARequestAccessWindowController.h */,
+				4C10B73D1C08D2150077E477 /* KCARequestAccessWindowController.m */,
 				4C7B63831C0CC66400D7038C /* RequestAccessWindow.xib */,
 			);
 			name = UI;
@@ -86,7 +86,7 @@
 			children = (
 				4C8EDA781C062B1C00B9D147 /* KeePassHTTPKit.framework */,
 				4C7E78491BFF326A00DFB924 /* Localization */,
-				4C487E6F1BF39FC500E595DE /* MacPassHTTP */,
+				4C487E6F1BF39FC500E595DE /* KeyChainAgent */,
 				4C487E6E1BF39FC500E595DE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,23 +94,23 @@
 		4C487E6E1BF39FC500E595DE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4C487E6D1BF39FC500E595DE /* MacPassHTTP.mpplugin */,
+				4C487E6D1BF39FC500E595DE /* KeyChainAgent.mpplugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4C487E6F1BF39FC500E595DE /* MacPassHTTP */ = {
+		4C487E6F1BF39FC500E595DE /* KeyChainAgent */ = {
 			isa = PBXGroup;
 			children = (
 				4C3C897B200FADEE00D306BE /* Lock.pdf */,
 				4C10B7411C08D2AE0077E477 /* UI */,
-				4C487E761BF3A0A400E595DE /* MPHMacPassHTTP.h */,
-				4C487E771BF3A0A400E595DE /* MPHMacPassHTTP.m */,
+				4C487E761BF3A0A400E595DE /* KCAKeyChainAgent.h */,
+				4C487E771BF3A0A400E595DE /* KCAKeyChainAgent.m */,
 				4C487E701BF39FC500E595DE /* Info.plist */,
-				4C967E341BF63CA900B1838C /* MPHServerDelegate.h */,
-				4C967E351BF63CA900B1838C /* MPHServerDelegate.m */,
+				4C967E341BF63CA900B1838C /* KCAServerDelegate.h */,
+				4C967E351BF63CA900B1838C /* KCAServerDelegate.m */,
 			);
-			path = MacPassHTTP;
+			path = KeyChainAgent;
 			sourceTree = "<group>";
 		};
 		4C7E78491BFF326A00DFB924 /* Localization */ = {
@@ -124,9 +124,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4C487E6C1BF39FC500E595DE /* MacPassHTTP */ = {
+		4C487E6C1BF39FC500E595DE /* KeyChainAgent */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4C487E731BF39FC500E595DE /* Build configuration list for PBXNativeTarget "MacPassHTTP" */;
+			buildConfigurationList = 4C487E731BF39FC500E595DE /* Build configuration list for PBXNativeTarget "KeyChainAgent" */;
 			buildPhases = (
 				4C487E691BF39FC500E595DE /* Sources */,
 				4C487E6A1BF39FC500E595DE /* Frameworks */,
@@ -138,9 +138,9 @@
 			);
 			dependencies = (
 			);
-			name = MacPassHTTP;
-			productName = MacPassHTTP;
-			productReference = 4C487E6D1BF39FC500E595DE /* MacPassHTTP.mpplugin */;
+			name = KeyChainAgent;
+			productName = KeyChainAgent;
+			productReference = 4C487E6D1BF39FC500E595DE /* KeyChainAgent.mpplugin */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -149,16 +149,16 @@
 		4C487E651BF39FC500E595DE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = MPH;
+				CLASSPREFIX = KCA;
 				LastUpgradeCheck = 0920;
-				ORGANIZATIONNAME = "HicknHack Software GmbH";
+				ORGANIZATIONNAME = "VHSchlenker";
 				TargetAttributes = {
 					4C487E6C1BF39FC500E595DE = {
 						CreatedOnToolsVersion = 7.1.1;
 					};
 				};
 			};
-			buildConfigurationList = 4C487E681BF39FC500E595DE /* Build configuration list for PBXProject "MacPassHTTP" */;
+			buildConfigurationList = 4C487E681BF39FC500E595DE /* Build configuration list for PBXProject "KeyChainAgent" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -172,7 +172,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4C487E6C1BF39FC500E595DE /* MacPassHTTP */,
+				4C487E6C1BF39FC500E595DE /* KeyChainAgent */,
 			);
 		};
 /* End PBXProject section */
@@ -182,7 +182,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CDE59481BFA051000C7AF5B /* MacPassHTTPSettings.xib in Resources */,
+				4CDE59481BFA051000C7AF5B /* KeyChainAgentSettings.xib in Resources */,
 				4C3C897C200FADEF00D306BE /* Lock.pdf in Resources */,
 				4C7B63811C0CC66400D7038C /* RequestAccessWindow.xib in Resources */,
 				4C3CAB051BFF339E009B4DF0 /* Localizable.strings in Resources */,
@@ -214,10 +214,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C487E781BF3A0A400E595DE /* MPHMacPassHTTP.m in Sources */,
-				4C967E361BF63CA900B1838C /* MPHServerDelegate.m in Sources */,
-				4C487E7C1BF3A47700E595DE /* MPHSettingsViewController.m in Sources */,
-				4C10B73F1C08D2150077E477 /* MPHRequestAccessWindowController.m in Sources */,
+				4C487E781BF3A0A400E595DE /* KCAKeyChainAgent.m in Sources */,
+				4C967E361BF63CA900B1838C /* KCAServerDelegate.m in Sources */,
+				4C487E7C1BF3A47700E595DE /* KCASettingsViewController.m in Sources */,
+				4C10B73F1C08D2150077E477 /* KCARequestAccessWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,7 +232,7 @@
 				4C5B48D71BFF3AED0036906C /* de */,
 			);
 			name = Localizable.strings;
-			path = MacPassHTTP;
+			path = KeyChainAgent;
 			sourceTree = "<group>";
 		};
 		4C7B63831C0CC66400D7038C /* RequestAccessWindow.xib */ = {
@@ -245,14 +245,14 @@
 			name = RequestAccessWindow.xib;
 			sourceTree = "<group>";
 		};
-		4CDE594A1BFA051000C7AF5B /* MacPassHTTPSettings.xib */ = {
+		4CDE594A1BFA051000C7AF5B /* KeyChainAgentSettings.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4C7E784D1BFF328600DFB924 /* Base */,
 				4C3CAB011BFF32AB009B4DF0 /* en */,
 				4C5B48D61BFF3AED0036906C /* de */,
 			);
-			name = MacPassHTTPSettings.xib;
+			name = KeyChainAgentSettings.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -375,14 +375,14 @@
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../MacPass/**";
-				INFOPLIST_FILE = MacPassHTTP/Info.plist;
+				INFOPLIST_FILE = KeyChainAgent/Info.plist;
 				INSTALL_PATH = "/Library/Application Support/MacPass";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @executable_path/../Frameworks";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hicknhacksoftware.MacPassHTTP;
+				PRODUCT_BUNDLE_IDENTIFIER = de.vhschlenker.KeyChainAgent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = mpplugin;
@@ -403,14 +403,14 @@
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../MacPass/**";
-				INFOPLIST_FILE = MacPassHTTP/Info.plist;
+				INFOPLIST_FILE = KeyChainAgent/Info.plist;
 				INSTALL_PATH = "/Library/Application Support/MacPass";
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @executable_path/../Frameworks";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hicknhacksoftware.MacPassHTTP;
+				PRODUCT_BUNDLE_IDENTIFIER = de.vhschlenker.KeyChainAgent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = mpplugin;
@@ -420,7 +420,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4C487E681BF39FC500E595DE /* Build configuration list for PBXProject "MacPassHTTP" */ = {
+		4C487E681BF39FC500E595DE /* Build configuration list for PBXProject "KeyChainAgent" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4C487E711BF39FC500E595DE /* Debug */,
@@ -429,7 +429,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4C487E731BF39FC500E595DE /* Build configuration list for PBXNativeTarget "MacPassHTTP" */ = {
+		4C487E731BF39FC500E595DE /* Build configuration list for PBXNativeTarget "KeyChainAgent" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4C487E741BF39FC500E595DE /* Debug */,

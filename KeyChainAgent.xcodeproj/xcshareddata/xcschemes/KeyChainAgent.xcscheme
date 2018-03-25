@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4C487E6C1BF39FC500E595DE"
-               BuildableName = "MacPassHTTP.mpplugin"
-               BlueprintName = "MacPassHTTP"
-               ReferencedContainer = "container:MacPassHTTP.xcodeproj">
+               BuildableName = "KeyChainAgent.mpplugin"
+               BlueprintName = "KeyChainAgent"
+               ReferencedContainer = "container:KeyChainAgent.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4C487E6C1BF39FC500E595DE"
-            BuildableName = "MacPassHTTP.mpplugin"
-            BlueprintName = "MacPassHTTP"
-            ReferencedContainer = "container:MacPassHTTP.xcodeproj">
+            BuildableName = "KeyChainAgent.mpplugin"
+            BlueprintName = "KeyChainAgent"
+            ReferencedContainer = "container:KeyChainAgent.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -85,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4C487E6C1BF39FC500E595DE"
-            BuildableName = "MacPassHTTP.mpplugin"
-            BlueprintName = "MacPassHTTP"
-            ReferencedContainer = "container:MacPassHTTP.xcodeproj">
+            BuildableName = "KeyChainAgent.mpplugin"
+            BlueprintName = "KeyChainAgent"
+            ReferencedContainer = "container:KeyChainAgent.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

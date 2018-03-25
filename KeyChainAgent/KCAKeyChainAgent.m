@@ -1,33 +1,33 @@
 //
-//  MPHMacPassHTTP.m
-//  MacPassHTTP
+//  KCAKeyChainAgent.m
+//  KeyChainAgent
 //
 //  Created by Michael Starke on 11/11/15.
 //  Copyright © 2015 HicknHack Software GmbH. All rights reserved.
 //
 
-#import "MPHMacPassHTTP.h"
-#import "MPHSettingsViewController.h"
-#import "MPHServerDelegate.h"
+#import "KCAKeyChainAgent.h"
+#import "KCASettingsViewController.h"
+#import "KCAServerDelegate.h"
 
 #import <KeePassHTTPKit/KeePassHTTPKit.h>
 
 
 NSUInteger const kKeePassHTTPDefaultPort = 19455;
 
-NSString *const kMPHSettingsKeyShowMenuItem           = @"MPHTTPSettingsKeyShowMenuItem";
-NSString *const kMPHSettingsKeyHttpPort               = @"MPHTTPSettingsKeyHttpPort";
-NSString *const kMPHSettingsKeyAllowRemoteConnections = @"MPHTTPSettingsKeyAllowRemoteConnections" ;
-NSString *const kMPHSettingsKeyShowNotifications      = @"MPHTTPSettingsKeyShowNotifications";
-NSString *const kMPHSettingsKeyIncludeKPHStringFields = @"MPHSettingsKeyIncludeKPHStringFields";
+NSString *const kKCASettingsKeyShowMenuItem           = @"KCATTPSettingsKeyShowMenuItem";
+NSString *const kKCASettingsKeyHttpPort               = @"KCATTPSettingsKeyHttpPort";
+NSString *const kKCASettingsKeyAllowRemoteConnections = @"KCATTPSettingsKeyAllowRemoteConnections" ;
+NSString *const kKCASettingsKeyShowNotifications      = @"KCATTPSettingsKeyShowNotifications";
+NSString *const kKCASettingsKeyIncludeKPHStringFields = @"KCASettingsKeyIncludeKPHStringFields";
 
 
-@interface MPHMacPassHTTP ()
+@interface KCAKeyChainAgent ()
 
-@property (strong) MPHSettingsViewController *settingsViewController;
+@property (strong) KCASettingsViewController *settingsViewController;
 @property (strong) KPHServer *server;
 @property (strong) NSStatusItem *statusItem;
-@property (strong) MPHServerDelegate *serverDelegate;
+@property (strong) KCAServerDelegate *serverDelegate;
 
 @property (nonatomic) BOOL showStatusItem;
 @property (nonatomic) NSUInteger serverPort;
@@ -35,27 +35,27 @@ NSString *const kMPHSettingsKeyIncludeKPHStringFields = @"MPHSettingsKeyIncludeK
 
 @end
 
-@implementation MPHMacPassHTTP
+@implementation KCAKeyChainAgent
 
 @synthesize settingsViewController = _settingsViewController;
 
 + (void)initialize {
-  [[NSUserDefaults standardUserDefaults] registerDefaults:@{ kMPHSettingsKeyHttpPort : @(kKeePassHTTPDefaultPort),
-                                                             kMPHSettingsKeyAllowRemoteConnections : @(NO),
-                                                             kMPHSettingsKeyShowNotifications : @(YES),
-                                                             kMPHSettingsKeyShowMenuItem : @YES,
-                                                             kMPHSettingsKeyIncludeKPHStringFields: @NO }];
+  [[NSUserDefaults standardUserDefaults] registerDefaults:@{ kKCASettingsKeyHttpPort : @(kKeePassHTTPDefaultPort),
+                                                             kKCASettingsKeyAllowRemoteConnections : @(NO),
+                                                             kKCASettingsKeyShowNotifications : @(YES),
+                                                             kKCASettingsKeyShowMenuItem : @YES,
+                                                             kKCASettingsKeyIncludeKPHStringFields: @NO }];
 }
 
 - (instancetype)initWithPluginHost:(MPPluginHost *)host {
   self = [super initWithPluginHost:host];
   if(self) {
-    _showStatusItem = [[NSUserDefaults standardUserDefaults] boolForKey:kMPHSettingsKeyShowMenuItem];
-    _serverPort = [[NSUserDefaults standardUserDefaults] integerForKey:kMPHSettingsKeyHttpPort];
+    _showStatusItem = [[NSUserDefaults standardUserDefaults] boolForKey:kKCASettingsKeyShowMenuItem];
+    _serverPort = [[NSUserDefaults standardUserDefaults] integerForKey:kKCASettingsKeyHttpPort];
     NSUserDefaultsController *defaultsController = [NSUserDefaultsController sharedUserDefaultsController];
-    NSString *showItemKeyPath = [NSString stringWithFormat:@"values.%@", kMPHSettingsKeyShowMenuItem];
-    NSString *serverPortKeyPath = [NSString stringWithFormat:@"values.%@", kMPHSettingsKeyHttpPort];
-    NSString *remoteConnectionKeyPath = [NSString stringWithFormat:@"values.%@", kMPHSettingsKeyAllowRemoteConnections];
+    NSString *showItemKeyPath = [NSString stringWithFormat:@"values.%@", kKCASettingsKeyShowMenuItem];
+    NSString *serverPortKeyPath = [NSString stringWithFormat:@"values.%@", kKCASettingsKeyHttpPort];
+    NSString *remoteConnectionKeyPath = [NSString stringWithFormat:@"values.%@", kKCASettingsKeyAllowRemoteConnections];
     [self bind:NSStringFromSelector(@selector(showStatusItem)) toObject:defaultsController withKeyPath:showItemKeyPath options:nil];
     [self bind:NSStringFromSelector(@selector(serverPort)) toObject:defaultsController withKeyPath:serverPortKeyPath options:nil];
     [self bind:NSStringFromSelector(@selector(allowRemoteConnection)) toObject:defaultsController withKeyPath:remoteConnectionKeyPath options:nil];
@@ -79,13 +79,13 @@ NSString *const kMPHSettingsKeyIncludeKPHStringFields = @"MPHSettingsKeyIncludeK
 
 - (NSViewController *)settingsViewController {
   if(!_settingsViewController) {
-    self.settingsViewController = [[MPHSettingsViewController alloc] init];
+    self.settingsViewController = [[KCASettingsViewController alloc] init];
     self.settingsViewController.plugin = self;
   }
   return _settingsViewController;
 }
 
-- (void)setSettingsViewController:(MPHSettingsViewController *)settingsViewController {
+- (void)setSettingsViewController:(KCASettingsViewController *)settingsViewController {
   _settingsViewController = settingsViewController;
 }
 
@@ -136,7 +136,7 @@ NSString *const kMPHSettingsKeyIncludeKPHStringFields = @"MPHSettingsKeyIncludeK
   if(!self.server) {
     self.server = [[KPHServer alloc] init];
     if(!self.serverDelegate) {
-      self.serverDelegate = [[MPHServerDelegate alloc] init];
+      self.serverDelegate = [[KCAServerDelegate alloc] init];
     }
     self.server.delegate = self.serverDelegate;
   }

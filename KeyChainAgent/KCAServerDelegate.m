@@ -1,14 +1,14 @@
 //
-//  MPHServerDelegate.m
-//  MacPassHTTP
+//  KCAServerDelegate.m
+//  KeyChainAgent
 //
 //  Created by Michael Starke on 13/11/15.
 //  Copyright © 2015 HicknHack Software GmbH. All rights reserved.
 //
 
-#import "MPHServerDelegate.h"
-#import "MPHMacPassHTTP.h"
-#import "MPHRequestAccessWindowController.h"
+#import "KCAServerDelegate.h"
+#import "KCAKeyChainAgent.h"
+#import "KCARequestAccessWindowController.h"
 
 #import "MPDocument.h"
 #import "NSString+MPPasswordCreation.h"
@@ -17,18 +17,18 @@
 
 static NSUUID *_rootUUID = nil;
 
-@interface MPHServerDelegate () <NSUserNotificationCenterDelegate>
+@interface KCAServerDelegate () <NSUserNotificationCenterDelegate>
 
 @property (weak) MPDocument *queryDocument; // TODO: convert to list of documents to support more than one open document!
 //@property (strong) NSHashTable *queryDocuments;
 @property (nonatomic, weak) KPKEntry *configurationEntry;
 @property (readonly) BOOL queryDocumentOpen;
-@property (strong) MPHRequestAccessWindowController *requestController;
+@property (strong) KCARequestAccessWindowController *requestController;
 
 
 @end
 
-@implementation MPHServerDelegate
+@implementation KCAServerDelegate
 
 - (instancetype)init {
   self = [super init];
@@ -147,7 +147,7 @@ static NSUUID *_rootUUID = nil;
 + (NSArray *)recursivelyFindEntriesInGroups:(NSArray *)groups forURL:(NSString *)url {
   NSMutableArray *entries = [[NSMutableArray alloc] init];
   
-  BOOL includeCustomField = [[NSUserDefaults standardUserDefaults] boolForKey:kMPHSettingsKeyIncludeKPHStringFields];
+  BOOL includeCustomField = [[NSUserDefaults standardUserDefaults] boolForKey:kKCASettingsKeyIncludeKPHStringFields];
   NSMutableArray *stringFields;
   if(includeCustomField) {
     stringFields = [[NSMutableArray alloc] init];
@@ -189,7 +189,7 @@ static NSUUID *_rootUUID = nil;
     return @[];
   }
   
-  NSArray *results = [MPHServerDelegate recursivelyFindEntriesInGroups:@[self.queryDocument.root] forURL:url];
+  NSArray *results = [KCAServerDelegate recursivelyFindEntriesInGroups:@[self.queryDocument.root] forURL:url];
   if(results.count > 0) {
     NSString *template = NSLocalizedStringFromTableInBundle(@"REQUEST_ENTRY_FOR_URL_%@", @"", [NSBundle bundleForClass:self.class], @"Notificaton on entry request for url");
     [self showNotificationWithTitle:[NSString stringWithFormat:template,url]];
@@ -213,10 +213,10 @@ static NSUUID *_rootUUID = nil;
   dispatch_semaphore_t sema = dispatch_semaphore_create(0L);
   
   NSString __block *label = nil;
-  __weak MPHServerDelegate *welf = self;
+  __weak KCAServerDelegate *welf = self;
   
-  self.requestController = [[MPHRequestAccessWindowController alloc] initWithRequestKey:key completionHandler:^(MPHRequestResponse response, NSString *identifier) {
-    if(response == MPHRequestResponseAllow) {
+  self.requestController = [[KCARequestAccessWindowController alloc] initWithRequestKey:key completionHandler:^(KCARequestResponse response, NSString *identifier) {
+    if(response == KCARequestResponseAllow) {
       [welf.configurationEntry addCustomAttribute:[[KPKAttribute alloc] initWithKey:[NSString stringWithFormat:KPHAssociatKeyFormat, identifier] value:key]];
     }
     label = identifier;
@@ -240,7 +240,7 @@ static NSUUID *_rootUUID = nil;
     return;
   }
   /* creat entry on main thread */
-  __weak MPHServerDelegate *welf = self;
+  __weak KCAServerDelegate *welf = self;
   dispatch_async(dispatch_get_main_queue(), ^{
     
     KPKEntry *entry = uuid ? [welf.queryDocument findEntry:[[NSUUID alloc] initWithUUIDString:uuid]] : nil;
@@ -272,7 +272,7 @@ static NSUUID *_rootUUID = nil;
     return @[];
   }
   
-  return [MPHServerDelegate recursivelyFindEntriesInGroups:self.queryDocument.root.groups forURL:nil];
+  return [KCAServerDelegate recursivelyFindEntriesInGroups:self.queryDocument.root.groups forURL:nil];
 }
 
 - (NSString *)generatePasswordForServer:(KPHServer *)server {
@@ -289,11 +289,11 @@ static NSUUID *_rootUUID = nil;
 
 - (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification {
   /* Do not show if disabled */
-  return [[NSUserDefaults standardUserDefaults] boolForKey:kMPHSettingsKeyShowNotifications];
+  return [[NSUserDefaults standardUserDefaults] boolForKey:kKCASettingsKeyShowNotifications];
 }
 
 - (void)showNotificationWithTitle:(NSString *)title {
-  BOOL showNotification = [[NSUserDefaults standardUserDefaults] boolForKey:kMPHSettingsKeyShowNotifications];
+  BOOL showNotification = [[NSUserDefaults standardUserDefaults] boolForKey:kKCASettingsKeyShowNotifications];
   if(!showNotification) {
     /* Just exit */
     return;

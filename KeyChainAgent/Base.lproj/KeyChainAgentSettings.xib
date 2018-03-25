@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="MPHSettingsViewController">
+        <customObject id="-2" userLabel="File's Owner" customClass="KCASettingsViewController">
             <connections>
                 <outlet property="allowRemoteConnectionCheckButton" destination="1b8-d7-7dw" id="fmD-nK-ADd"/>
                 <outlet property="portTextField" destination="r1I-t4-2dl" id="br6-xv-BwM"/>
